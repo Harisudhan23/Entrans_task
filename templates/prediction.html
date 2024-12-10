@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Prediction Tool</h2>
+<form method="post">
+    <label>Longitude: <input type="text" name="longitude" required></label><br>
+    <label>Latitude: <input type="text" name="latitude" required></label><br>
+    <label>Housing Median Age: <input type="text" name="housing_median_age" required></label><br>
+    <label>Total Rooms: <input type="text" name="total_rooms" required></label><br>
+    <label>Total Bedrooms: <input type="text" name="total_bedrooms" required></label><br>
+    <label>Population: <input type="text" name="population" required></label><br>
+    <label>Households: <input type="text" name="households" required></label><br>
+    <label>Median Income: <input type="text" name="median_income" required></label><br>
+    <label>Ocean Proximity:</label>
+    <label><input type="radio" name="ocean_proximity_INLAND" value="1"> INLAND</label>
+    <label><input type="radio" name="ocean_proximity_NEAR BAY" value="1"> NEAR BAY</label>
+    <label><input type="radio" name="ocean_proximity_NEAR OCEAN" value="1"> NEAR OCEAN</label>
+    <label><input type="radio" name="ocean_proximity_ISLAND" value="1"> ISLAND</label>
+    <br><button type="submit">Predict</button>
+</form>
+
+{% if prediction %}
+<h3>Predicted Price: ${{ prediction }}</h3>
+{% endif %}
+{% endblock %}

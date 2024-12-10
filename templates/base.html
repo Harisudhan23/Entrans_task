@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>House Price Predictor</title>
+</head>
+<body>
+    <header>
+        <h1>House Price Prediction System</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/descriptive-statistics">Descriptive Statistics</a>
+            <a href="/inferential-statistics">Inferential Statistics</a>
+            <a href="/prediction-tool">Prediction Tool</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Powered by Flask | © 2024</p>
+    </footer>
+</body>
+</html>
