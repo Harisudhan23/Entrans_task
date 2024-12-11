@@ -13,7 +13,6 @@
             <a href="/">Home</a>
             <a href="/descriptive-stats">Descriptive Stats</a>
             <a href="/inferential-stats">Inferential Stats</a>
-            <a href="/prediction-tool">Prediction Tool</a>
         </nav>
     </header>
     <main>
@@ -40,8 +39,8 @@
         </table>
 
         <h2>Visualizations</h2>
-        <img src="{{ url_for('static', filename='images/descriptive_plot1.png') }}" alt="Descriptive Plot 1">
-        <img src="{{ url_for('static', filename='images/descriptive_plot2.png') }}" alt="Descriptive Plot 2">
+        <img src="{{ url_for('static', filename='image/correlation_map.png') }}" alt="Correlation Matrix">
+        <img src="{{ url_for('static', filename='image/median_distribution.png') }}" alt="Distribution of Median House">
     </main>
     <footer>
         <p>Powered by Flask | © 2024</p>

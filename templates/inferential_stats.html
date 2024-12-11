@@ -13,21 +13,18 @@
             <a href="/">Home</a>
             <a href="/descriptive-stats">Descriptive Stats</a>
             <a href="/inferential-stats">Inferential Stats</a>
-            <a href="/prediction-tool">Prediction Tool</a>
         </nav>
     </header>
     <main>
         <h2>Trends and Relationships</h2>
-        <h3>Correlation Matrix</h3>
-        <img src="{{ url_for('static', filename='images/correlation_matrix.png') }}" alt="Correlation Matrix">
         
         <h3>Regression Analysis</h3>
         <p>Below is a summary of the regression analysis performed on the dataset:</p>
         <pre>{{ regression_summary }}</pre>
         
         <h3>Visualizations</h3>
-        <img src="{{ url_for('static', filename='images/inferential_plot1.png') }}" alt="Inferential Plot 1">
-        <img src="{{ url_for('static', filename='images/inferential_plot2.png') }}" alt="Inferential Plot 2">
+        <img src="{{ url_for('static', filename='image/rooms_vs_bedrooms_scatter.png') }}" alt="Scatter: Total Rooms vs. Total Bedrooms">
+        <img src="{{ url_for('static', filename='image/income_trend_over_age.png') }}" alt="Trend: Median Income Over Housing Age">
     </main>
     <footer>
         <p>Powered by Flask | © 2024</p>
