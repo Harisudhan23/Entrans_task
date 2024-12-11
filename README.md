@@ -4,7 +4,9 @@
 ## Features
 
    **Descriptive Statistics Page**: Visualize data distribution and correlations.
+
    **Inferential Statistics Page**: Identify trends and relationship in data.
+   
    **Prediction Page**: Input house features and predict the price. 
 
 ## Technologies Used
