@@ -50,8 +50,8 @@
     Provides an overview of the application.
 ### Descriptive Statistics
     Displays visualizations for data distributions:
-     * Median Income Distribution
-     * Correlation Matrix
+     - Median Income Distribution
+     - Correlation Matrix
 ### Inferential Statistics
     Explores relationships in the dataset:
      - Scatterplot: Total Rooms vs. Total Bedrooms
@@ -62,9 +62,9 @@
 
 ## Demo
 
-    Open http://127.0.0.1:5000/ in your browser after running the app.
+- Open http://127.0.0.1:5000/ in your browser after running the app.
       Run - app.py
-    Navigate between pages:
+- Navigate between pages:
       Descriptive Stats: http://127.0.0.1:5000/descriptive-stats
       Inferential Stats: http://127.0.0.1:5000/inferential-stats
       Prediction: http://127.0.0.1:5000/ 
