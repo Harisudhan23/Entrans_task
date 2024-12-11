@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Tool</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Model Prediction</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/descriptive-statistics">Descriptive Statistics</a>
+            <a href="/inferential-statistics">Inferential Statistics</a>
+            <a href="/prediction-tool">Prediction Tool</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Enter Details to Predict House Price</h2>
+        <form action="/prediction-tool" method="POST">
+            <label for="longitude">Longitude:</label>
+            <input type="number" id="longitude" name="longitude" step="any" required><br>
+
+            <label for="latitude">Latitude:</label>
+            <input type="number" id="latitude" name="latitude" step="any" required><br>
+
+            <label for="housing_median_age">Housing Median Age:</label>
+            <input type="number" id="housing_median_age" name="housing_median_age" required><br>
+
+            <label for="total_rooms">Total Rooms:</label>
+            <input type="number" id="total_rooms" name="total_rooms" required><br>
+
+            <label for="total_bedrooms">Total Bedrooms:</label>
+            <input type="number" id="total_bedrooms" name="total_bedrooms" required><br>
+
+            <label for="population">Population:</label>
+            <input type="number" id="population" name="population" required><br>
+
+            <label for="households">Households:</label>
+            <input type="number" id="households" name="households" required><br>
+
+            <label for="median_income">Median Income:</label>
+            <input type="number" id="median_income" name="median_income" step="any" required><br>
+
+            <label for="ocean_proximity_INLAND">Ocean Proximity (INLAND):</label>
+            <input type="checkbox" id="ocean_proximity_INLAND" name="ocean_proximity_INLAND"><br>
+
+            <label for="ocean_proximity_ISLAND">Ocean Proximity (ISLAND):</label>
+            <input type="checkbox" id="ocean_proximity_ISLAND" name="ocean_proximity_ISLAND"><br>
+
+            <label for="ocean_proximity_NEAR_BAY">Ocean Proximity (NEAR BAY):</label>
+            <input type="checkbox" id="ocean_proximity_NEAR_BAY" name="ocean_proximity_NEAR_BAY"><br>
+
+            <label for="ocean_proximity_NEAR_OCEAN">Ocean Proximity (NEAR OCEAN):</label>
+            <input type="checkbox" id="ocean_proximity_NEAR_OCEAN" name="ocean_proximity_NEAR_OCEAN"><br><br>
+
+            <input type="submit" value="Predict Price">
+        </form>
+
+        {% if prediction %}
+            <h3>Predicted House Price: ${{ prediction }}</h3>
+        {% endif %}
+    </main>
+</body>
+</html>

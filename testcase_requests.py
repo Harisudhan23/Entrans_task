@@ -3,7 +3,7 @@ import requests
 
 class TestHousePriceAPI(unittest.TestCase):
     def setUp(self):
-        self.url = "http://127.0.0.1:5001/predict"
+        self.url = "http://127.0.0.1:5000/predict"
         self.valid_data = {
             "longitude": -121.56,
             "latitude": 37.75,

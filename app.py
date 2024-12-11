@@ -4,7 +4,7 @@ import joblib
 app = Flask(__name__)
 
 # Load the trained model
-model = joblib.load('D:/ENtrans/house_price.pkl')
+model = joblib.load('D:/Entrans/house_price.pkl')
 
 # List of required fields
 REQUIRED_FIELDS = [
@@ -46,6 +46,23 @@ def predict():
     except Exception as e:
         print("Error:", str(e))
         return jsonify({'error': 'Internal Server Error'}), 500
+    
+@app.route('/descriptive-stats')
+def descriptive_stats():
+    # Example data - replace with actual stats computation
+    summary_stats = {
+        "longitude": {"mean": -119.5, "median": -118.5, "std": 1.0},
+        "latitude": {"mean": 34.0, "median": 33.5, "std": 1.2},
+        # Add more features as needed
+    }
+    return render_template('descriptive_stats.html', summary_stats=summary_stats)
+
+@app.route('/inferential-stats')
+def inferential_stats():
+    # Example regression summary - replace with actual analysis
+    regression_summary = "R-squared: 0.85\nP-value: <0.05\n... other regression details ..."
+    return render_template('inferential_stats.html', regression_summary=regression_summary)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

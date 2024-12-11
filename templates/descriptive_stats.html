@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descriptive Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Descriptive Statistics</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/descriptive-stats">Descriptive Stats</a>
+            <a href="/inferential-stats">Inferential Stats</a>
+            <a href="/prediction-tool">Prediction Tool</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Summary Statistics</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Mean</th>
+                    <th>Median</th>
+                    <th>Standard Deviation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for feature, stats in summary_stats.items() %}
+                <tr>
+                    <td>{{ feature }}</td>
+                    <td>{{ stats.mean }}</td>
+                    <td>{{ stats.median }}</td>
+                    <td>{{ stats.std }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Visualizations</h2>
+        <img src="{{ url_for('static', filename='images/descriptive_plot1.png') }}" alt="Descriptive Plot 1">
+        <img src="{{ url_for('static', filename='images/descriptive_plot2.png') }}" alt="Descriptive Plot 2">
+    </main>
+    <footer>
+        <p>Powered by Flask | © 2024</p>
+    </footer>
+</body>
+</html>

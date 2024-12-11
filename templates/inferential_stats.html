@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inferential Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Inferential Statistics</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/descriptive-stats">Descriptive Stats</a>
+            <a href="/inferential-stats">Inferential Stats</a>
+            <a href="/prediction-tool">Prediction Tool</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Trends and Relationships</h2>
+        <h3>Correlation Matrix</h3>
+        <img src="{{ url_for('static', filename='images/correlation_matrix.png') }}" alt="Correlation Matrix">
+        
+        <h3>Regression Analysis</h3>
+        <p>Below is a summary of the regression analysis performed on the dataset:</p>
+        <pre>{{ regression_summary }}</pre>
+        
+        <h3>Visualizations</h3>
+        <img src="{{ url_for('static', filename='images/inferential_plot1.png') }}" alt="Inferential Plot 1">
+        <img src="{{ url_for('static', filename='images/inferential_plot2.png') }}" alt="Inferential Plot 2">
+    </main>
+    <footer>
+        <p>Powered by Flask | © 2024</p>
+    </footer>
+</body>
+</html>
+
