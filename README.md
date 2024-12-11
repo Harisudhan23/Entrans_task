@@ -66,27 +66,18 @@
       Run - app.py
 
 - Navigate between pages:
-      Descriptive Stats: http://127.0.0.1:5000/descriptive-stats
-
-      Inferential Stats: http://127.0.0.1:5000/inferential-stats
-
-      Prediction: http://127.0.0.1:5000/ 
+      Descriptive Stats: http://127.0.0.1:5000/descriptive-stats Inferential Stats: http://127.0.0.1:5000/inferential-stats Prediction: http://127.0.0.1:5000/ 
 
 ## Screenshots
 
 - ### Descriptive Stats page        
-
-      Screenshot 2024-12-11 175717-1.png
-
-      Screenshot 2024-12-11 175747.png
+Screenshot 2024-12-11 175717-1.png
+Screenshot 2024-12-11 175747.png
 - ### Inferential Stats page
-
-      Screenshot 2024-12-11 175850.png
-
-      Screenshot 2024-12-11 175915.png
+Screenshot 2024-12-11 175850.png
+Screenshot 2024-12-11 175915.png
 - ### Prediction page
-      Screenshot 2024-12-11 175941.png
-      
+Screenshot 2024-12-11 175941.png
 
 ## Conclusion
 
