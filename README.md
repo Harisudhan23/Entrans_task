@@ -6,7 +6,7 @@
    **Descriptive Statistics Page**: Visualize data distribution and correlations.
 
    **Inferential Statistics Page**: Identify trends and relationship in data.
-   
+
    **Prediction Page**: Input house features and predict the price. 
 
 ## Technologies Used
@@ -31,17 +31,17 @@
 ## Steps
 
 ### Exploratory Data Analysis
-     - Analyze dataset characteristics with visualizations
+    Analyze dataset characteristics with visualizations.
 ### Inferential Statistics
-     - Conduct hypothesis testing and trend analysis.
+    Conduct hypothesis testing and trend analysis.
 ### Predictive Modeling
-     - Train a house price prediction model using regression algorithms. Save the trained model as house_price.pkl.  
+    Train a house price prediction model using regression algorithms. Save the trained model as house_price.pkl.  
 ### UI Design
-     - Build three pages: Descriptive Statistics, Inferential Statistics, and Prediction Tool.Display visualizations and provide input forms for predictions.              
+    Build three pages: Descriptive Statistics, Inferential Statistics, and Prediction Tool.Display visualizations and provide input forms for predictions.              
 ### Backend
-     - Use Flask to handle routing, serve pages, and process predictions via API. Integrate UI with the trained model. 
+    Use Flask to handle routing, serve pages, and process predictions via API. Integrate UI with the trained model. 
 ### Testing
-     - Validate API endpoints, UI functionality, and prediction accuracy with unit and integration tests.
+    Validate API endpoints, UI functionality, and prediction accuracy with unit and integration tests.
 **Run - app.py
 
 ## Usage
@@ -50,8 +50,8 @@
     Provides an overview of the application.
 ### Descriptive Statistics
     Displays visualizations for data distributions:
-     - Median Income Distribution
-     - Correlation Matrix
+     * Median Income Distribution
+     * Correlation Matrix
 ### Inferential Statistics
     Explores relationships in the dataset:
      - Scatterplot: Total Rooms vs. Total Bedrooms
