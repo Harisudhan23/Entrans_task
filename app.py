@@ -1,68 +1,51 @@
 from flask import Flask, render_template, request, jsonify
-import pandas as pd
 import joblib
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 app = Flask(__name__)
 
-# Load the pre-trained model
-model = joblib.load('house_price.pkl')
+# Load the trained model
+model = joblib.load('D:/ENtrans/house_price.pkl')
 
-# Load data for statistics pages
-data = pd.read_csv('Intern Housing Data India.csv')  # Replace with your dataset path
+# List of required fields
+REQUIRED_FIELDS = [
+    'longitude', 'latitude', 'housing_median_age', 'total_rooms',
+    'total_bedrooms', 'population', 'households', 'median_income',
+    'ocean_proximity_INLAND', 'ocean_proximity_ISLAND',
+    'ocean_proximity_NEAR BAY', 'ocean_proximity_NEAR OCEAN'
+]
 
 @app.route('/')
 def home():
-    return render_template('base.html')
+    return render_template('index.html')
 
-@app.route('/descriptive-statistics')
-def descriptive_statistics():
-    # Summary statistics
-    summary = data.describe().to_html(classes='table table-striped', border=0)
-    
-    # Correlation heatmap
-    plt.figure(figsize=(10, 6))
-    sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
-    plt.savefig('static/correlation_heatmap.png', bbox_inches='tight')
-    plt.close()
+@app.route('/predict', methods=['POST'])
+def predict():
+    try:
+        data = request.get_json()
+        print("Received Data:", data)
 
-    return render_template('descriptive_statistics.html', summary=summary)
+        # Check for missing fields
+        missing_fields = [field for field in REQUIRED_FIELDS if field not in data]
+        if missing_fields:
+            return jsonify({'error': f'Missing fields: {", ".join(missing_fields)}'}), 400
 
-@app.route('/inferential-statistics')
-def inferential_statistics():
-    # Create any trends or relationship plots, e.g., Income vs. House Value
-    plt.figure(figsize=(10, 6))
-    sns.scatterplot(x='median_income', y='median_house_value', data=data, alpha=0.5)
-    plt.xlabel('Median Income')
-    plt.ylabel('Median House Value')
-    plt.savefig('static/income_vs_house_value.png', bbox_inches='tight')
-    plt.close()
-
-    return render_template('inferential_statistics.html')
-
-@app.route('/prediction-tool', methods=['GET', 'POST'])
-def prediction_tool():
-    if request.method == 'POST':
-        # Extract user inputs
-        form_data = request.form
+        # Extract features
         features = [
-            float(form_data.get('longitude')),
-            float(form_data.get('latitude')),
-            float(form_data.get('housing_median_age')),
-            float(form_data.get('total_rooms')),
-            float(form_data.get('total_bedrooms')),
-            float(form_data.get('population')),
-            float(form_data.get('households')),
-            float(form_data.get('median_income')),
-            int(form_data.get('ocean_proximity_INLAND', 0)),
-            int(form_data.get('ocean_proximity_ISLAND', 0)),
-            int(form_data.get('ocean_proximity_NEAR BAY', 0)),
-            int(form_data.get('ocean_proximity_NEAR OCEAN', 0)),
+            data['longitude'], data['latitude'], data['housing_median_age'],
+            data['total_rooms'], data['total_bedrooms'], data['population'],
+            data['households'], data['median_income'], data['ocean_proximity_INLAND'],
+            data['ocean_proximity_ISLAND'], data['ocean_proximity_NEAR BAY'],
+            data['ocean_proximity_NEAR OCEAN']
         ]
-        prediction = model.predict([features])[0]
-        return render_template('prediction_tool.html', prediction=round(prediction, 2))
-    return render_template('prediction_tool.html')
+
+        # Make prediction
+        prediction = model.predict([features])
+
+        return jsonify({'predicted_price': prediction[0]})
+
+    except Exception as e:
+        print("Error:", str(e))
+        return jsonify({'error': 'Internal Server Error'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True)
