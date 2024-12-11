@@ -75,18 +75,20 @@
 Screenshot 2024-12-11 175717-1.png
 
 Screenshot 2024-12-11 175747.png
+
 - ### Inferential Stats page
 
 Screenshot 2024-12-11 175850.png
 
 Screenshot 2024-12-11 175915.png
+
 - ### Prediction page
 
 Screenshot 2024-12-11 175941.png
 
 ## Conclusion
 
-   The House Price Prediction System combines data analysis, statistical insights, and predictive modeling into a user-friendly interface. It enables users to explore data through visualizations, understand trends with inferential statistics, and predict housing prices using machine learning. This scalable solution bridges data science and full-stack development, offering valuable insights for shakeholders decisions.              
+   The House Price Prediction System combines data analysis, statistical insights, and predictive modeling into a user-friendly interface. It enables users to explore data through visualizations, understand trends with inferential statistics, and predict housing prices using machine learning. This scalable solution bridges data science and full-stack development, offering valuable insights for stakeholders decisions.              
 
 
          
