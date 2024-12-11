@@ -70,13 +70,18 @@
 
 ## Screenshots
 
-- ### Descriptive Stats page        
+- ### Descriptive Stats page  
+
 Screenshot 2024-12-11 175717-1.png
+
 Screenshot 2024-12-11 175747.png
 - ### Inferential Stats page
+
 Screenshot 2024-12-11 175850.png
+
 Screenshot 2024-12-11 175915.png
 - ### Prediction page
+
 Screenshot 2024-12-11 175941.png
 
 ## Conclusion
